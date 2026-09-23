@@ -1,6 +1,6 @@
 # Nokia 3210 / Opera Mini acceptance check
 
-Use a deployed HTTPS preview. Record the handset model, Opera Mini version, Mobile view setting, text size, and which browser bars remain visible. The target is the 2024 Nokia 3210 4G with a 2.4-inch QVGA display.
+Use a deployed HTTPS preview. Record the handset model, Opera Mini version, Mobile view setting, text size, and which browser bars remain visible. The target is the 2024 Nokia 3210 4G with a 2.4-inch, 240 × 320 display. Check usable viewport heights of 200, 240, 280 and 320 CSS pixels: toolbar space varies. Normal screens retain the 200px compact fallback; direction icons and controls grow when more height is available.
 
 - Start Journey is visible and selectable without scrolling.
 - From/To inputs, Next and Back fit after returning from the native text editor.

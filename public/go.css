@@ -383,3 +383,39 @@ main {
   padding-top: 8px;
   padding-bottom: 4px;
 }
+
+/* Nokia 3210: 240 × 320 panel, with variable Opera Mini toolbar space.
+   Keep the 200px fallback above; enhance only when usable height permits. */
+@media (min-height: 240px) {
+  .journey.compact .icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 7px;
+  }
+  .compact .step-button {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .result,
+  .place-choice,
+  .detail {
+    height: 43px;
+  }
+  .place-choice {
+    padding-top: 6px;
+  }
+  .detail {
+    line-height: 38px;
+  }
+}
+@media (min-height: 280px) {
+  .journey.compact .icon {
+    width: 72px;
+    height: 72px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+  .compact .steps {
+    margin-top: 15px;
+  }
+}

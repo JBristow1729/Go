@@ -43,3 +43,14 @@ One minor remains deferred: a request carrying a missing session ID can leave a 
 GitHub, deployment, DNS and billing configuration have not been changed.
 
 Road-name clarification: named turns display the road entered, even if it has the same name as the previous road. Missing names now display “Road name unavailable”, replacing the misleading “On this road”. Regression tests pass and the updated card fits 240×200.
+
+## 240 × 320 handset layout update
+
+Checked 17 rendered screen cases at each usable viewport size of 240 × 200,
+240 × 240, 240 × 280 and 240 × 320 using the supported in-app browser:
+68 checks, no horizontal or vertical overflow. Cases cover long results and
+instructions, input/routing errors, information pages and all direction icons.
+Direction icons measure 40px, 56px and 72px as usable height increases.
+The 200px baseline remains the fallback if height media queries are unsupported.
+These checks do not emulate Opera Mini's proxy rendering or native text editor;
+physical-phone confirmation remains necessary.

@@ -19,7 +19,7 @@ async function fits(page, label) {
     `${label}: ${JSON.stringify(box)}`,
   );
 }
-for (const height of [200, 240, 320])
+for (const height of [200, 240, 280, 320])
   test(`whole no-JavaScript journey fits 240x${height}`, async () => {
     const server = createLocalServer({
       provider: createDemoProvider(),
