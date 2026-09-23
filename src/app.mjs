@@ -50,12 +50,6 @@ export function createApp({
       const origin = request.headers.get("origin");
       if (origin && origin !== "null" && origin !== url.origin)
         return fail("Please reopen Go.", 403);
-      if (
-        !request.headers
-          .get("content-type")
-          ?.startsWith("application/x-www-form-urlencoded")
-      )
-        return fail("Unsupported form.", 415);
     }
     let form = null;
     if (request.method === "POST") {
@@ -73,6 +67,16 @@ export function createApp({
           }
           parts.push(value);
         }
+      // Start Journey has no fields. Some clients/proxies omit its form
+      // content type; only that genuinely empty POST needs no form decoding.
+      const emptyStart = path === "/start" && total === 0;
+      if (
+        !emptyStart &&
+        !request.headers
+          .get("content-type")
+          ?.startsWith("application/x-www-form-urlencoded")
+      )
+        return fail("Unsupported form.", 415);
       form = new URLSearchParams(Buffer.concat(parts).toString("utf8"));
     }
     if (request.method === "POST" && path === "/start") {

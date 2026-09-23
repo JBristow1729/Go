@@ -244,3 +244,49 @@ test("active requests renew cookie lifetime as well as server expiry", async () 
   const r = await h.get("/from");
   assert.match(r.headers.get("set-cookie") || "", /Max-Age=7200/);
 });
+
+test("empty Start Journey POST accepts omitted or generic content type and opens From", async () => {
+  const app = createApp({
+    store: createMemoryStore(),
+    provider: {},
+    render: (view, model) => JSON.stringify({ view, ...model }),
+  });
+  for (const contentType of [null, "text/plain", "application/octet-stream"]) {
+    const headers = contentType ? { "content-type": contentType } : {};
+    const started = await app(
+      new Request("http://go.test/start", {
+        method: "POST",
+        headers,
+        body: new Uint8Array(),
+      }),
+    );
+    assert.equal(started.status, 303);
+    assert.equal(started.headers.get("location"), "/from");
+    const cookie = started.headers.get("set-cookie").split(";")[0];
+    const next = await app(
+      new Request("http://go.test/from", { headers: { cookie } }),
+    );
+    assert.equal(next.status, 200);
+    assert.equal((await next.json()).side, "from");
+  }
+});
+
+test("empty-start compatibility retains origin, body-size and other-form checks", async () => {
+  const app = createApp({
+    store: createMemoryStore(),
+    provider: {},
+    render: (v, m) => JSON.stringify({ v, ...m }),
+  });
+  for (const [path, headers, body, status] of [
+    ["/start", { origin: "https://foreign.test" }, new Uint8Array(), 403],
+    ["/start", { "content-type": "text/plain" }, "unexpected=data", 415],
+    ["/search/from", {}, new Uint8Array(), 415],
+    ["/start", {}, new Uint8Array(8193), 413],
+  ]) {
+    const response = await app(
+      new Request("http://go.test" + path, { method: "POST", headers, body }),
+    );
+    assert.equal(response.status, status);
+    assert.equal(response.headers.get("set-cookie"), null);
+  }
+});
