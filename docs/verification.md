@@ -54,3 +54,13 @@ Direction icons measure 40px, 56px and 72px as usable height increases.
 The 200px baseline remains the fallback if height media queries are unsupported.
 These checks do not emulate Opera Mini's proxy rendering or native text editor;
 physical-phone confirmation remains necessary.
+
+## Temporary forced QVGA experiment
+
+At the owner's request, adaptive height and desktop media rules are commented out.
+The viewport requests width=240, height=320; 72px arrows and larger controls apply
+unconditionally. CSS URL version 3 bypasses the previous stylesheet cache.
+All 17 screen fixtures fit 240 × 320 in the in-app browser. This temporarily
+supersedes the adaptive layout above; Opera Mini may still override viewport hints.
+Restore the commented rules, remove the final fixed-layout block, restore the
+device-width viewport and browser test sizes, and bump the CSS URL to revert.

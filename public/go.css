@@ -310,6 +310,7 @@ main.about {
 .start footer {
   display: none;
 }
+/* Temporarily disabled desktop layout.
 @media (min-width: 600px) {
   body {
     margin-top: 48px;
@@ -319,6 +320,7 @@ main.about {
     border-radius: 7px;
   }
 }
+*/
 /* Reserve browser space: the normal card fits a 240 × 200 CSS pixel viewport. */
 main {
   padding-top: 6px;
@@ -386,6 +388,7 @@ main {
 
 /* Nokia 3210: 240 × 320 panel, with variable Opera Mini toolbar space.
    Keep the 200px fallback above; enhance only when usable height permits. */
+/* Temporarily disabled adaptive heights; restore after handset testing.
 @media (min-height: 240px) {
   .journey.compact .icon {
     width: 56px;
@@ -418,4 +421,34 @@ main {
   .compact .steps {
     margin-top: 15px;
   }
+}
+*/
+
+/* Temporary fixed 240 × 320 handset layout, independent of reported height. */
+body {
+  width: 240px;
+}
+.journey.compact .icon {
+  width: 72px;
+  height: 72px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+.compact .step-button {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.compact .steps {
+  margin-top: 15px;
+}
+.result,
+.place-choice,
+.detail {
+  height: 43px;
+}
+.place-choice {
+  padding-top: 6px;
+}
+.detail {
+  line-height: 38px;
 }

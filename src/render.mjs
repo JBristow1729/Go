@@ -142,5 +142,5 @@ export function renderPage(view, m = {}) {
     view === "start"
       ? ""
       : `<footer>${link("/credits", "© OpenStreetMap · HeiGIT")}${link("/about", "Go", "about")}</footer>`;
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#111111"><title>Go — simple directions</title><link rel="icon" href="/icons/straight.png"><link rel="stylesheet" href="/go.css?v=1"></head><body><main class="${expanded ? "expanded" : "compact"} ${view}">${m.demo ? '<div class="demo">Demo · sample journey</div>' : ""}${content}${foot}</main></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=240, height=320, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#111111"><title>Go — simple directions</title><link rel="icon" href="/icons/straight.png"><link rel="stylesheet" href="/go.css?v=3-fixed-qvga"></head><body><main class="${expanded ? "expanded" : "compact"} ${view}">${m.demo ? '<div class="demo">Demo · sample journey</div>' : ""}${content}${foot}</main></body></html>`;
 }
