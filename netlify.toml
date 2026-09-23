@@ -1,0 +1,15 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+[build.environment]
+  NODE_VERSION = "24"
+[functions]
+  node_bundler = "esbuild"
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/go"
+  status = 200
+[[headers]]
+  for = "/icons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

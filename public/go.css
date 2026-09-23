@@ -1,0 +1,385 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  background: #111;
+  color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0 auto;
+  max-width: 240px;
+  background: #111;
+}
+main {
+  padding: 7px 8px;
+  text-align: center;
+}
+h1,
+p,
+form {
+  margin: 0;
+}
+h1 {
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+a {
+  color: #ddd;
+  text-decoration: underline;
+}
+button,
+input {
+  font: inherit;
+  color: #f2f2f2;
+  border: 1px solid #686868;
+  border-radius: 4px;
+  background: #282828;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: #777;
+}
+button {
+  cursor: pointer;
+  padding: 5px 9px;
+  line-height: 20px;
+}
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid #f2f2f2;
+  outline-offset: 1px;
+  background: #454545;
+}
+input[type="text"] {
+  width: 100%;
+  height: 32px;
+  padding: 4px 7px;
+  margin-bottom: 7px;
+  border-color: #909090;
+  background: #191919;
+}
+nav {
+  margin-top: 6px;
+  line-height: 22px;
+}
+nav a {
+  display: inline-block;
+}
+.primary {
+  display: block;
+  width: 100%;
+  background: #333;
+  border: 1px solid #777;
+  border-radius: 4px;
+  padding: 6px;
+  line-height: 22px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.start > div.start {
+  padding-top: 44px;
+  padding-bottom: 30px;
+}
+.start-button {
+  width: 100%;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 28px;
+  padding: 14px 5px;
+  background: #363636;
+  border-color: #8a8a8a;
+}
+.ready {
+  padding-top: 22px;
+  padding-bottom: 15px;
+}
+.ready h1 {
+  font-size: 26px;
+  line-height: 32px;
+  margin-bottom: 15px;
+}
+.demo {
+  font-size: 10px;
+  line-height: 12px;
+  color: #bdbdbd;
+  margin-bottom: 3px;
+}
+.result {
+  position: relative;
+  height: 37px;
+  margin-bottom: 3px;
+  text-align: left;
+}
+.result form {
+  margin-right: 25px;
+}
+.place-choice {
+  width: 100%;
+  text-align: left;
+  display: block;
+  height: 37px;
+  padding: 2px 6px;
+  line-height: 17px;
+}
+.place-choice span {
+  display: block;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.place-choice small {
+  display: block;
+  font-size: 11px;
+  line-height: 13px;
+  color: #bdbdbd;
+  white-space: nowrap;
+}
+.detail {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 23px;
+  height: 37px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 20px;
+  border: 1px solid #686868;
+  border-radius: 4px;
+  background: #242424;
+  text-decoration: none;
+}
+.results h1 {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 4px;
+}
+.results nav {
+  margin-top: 2px;
+  line-height: 20px;
+}
+.empty {
+  margin: 16px 0;
+}
+.modes {
+  display: table;
+  width: 100%;
+  border-spacing: 4px 0;
+}
+.modes button {
+  display: table-cell;
+  width: 48%;
+  padding: 10px 5px 6px;
+}
+.modes button + button {
+  margin-left: 4%;
+}
+.modes span {
+  display: block;
+  line-height: 23px;
+  font-weight: bold;
+}
+.icon {
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  width: 40px;
+  height: 40px;
+}
+.time {
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 5px;
+}
+.journey .icon {
+  margin-bottom: 3px;
+}
+.action {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 3px;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+}
+.road {
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  white-space: nowrap;
+}
+.steps {
+  display: table;
+  width: 100%;
+  margin-top: 9px;
+  line-height: 20px;
+}
+.steps form {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+}
+.step-button {
+  display: inline-block;
+  width: 48%;
+  padding: 5px 2px;
+  border: 1px solid #747474;
+  border-radius: 4px;
+  background: #292929;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 20px;
+}
+.steps form .step-button {
+  width: 100%;
+}
+.step-button + .step-button,
+.steps form {
+  margin-left: 4%;
+}
+.step-empty {
+  display: inline-block;
+  width: 48%;
+}
+.step-empty + .step-button {
+  margin-left: 4%;
+}
+.full {
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  line-height: 20px;
+  margin: 9px 0;
+  text-align: left;
+}
+.original {
+  color: #ccc;
+}
+.collapse {
+  display: inline-block;
+  line-height: 25px;
+}
+.message {
+  font-size: 13px;
+  line-height: 17px;
+  margin: 4px 0 7px;
+}
+.info {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 6px 0;
+}
+.info-links a {
+  display: block;
+}
+.error .message {
+  margin: 16px 0;
+}
+.about h1 {
+  font-size: 24px;
+}
+.expanded .action {
+  line-height: 21px;
+}
+.expanded .steps {
+  margin-top: 8px;
+}
+footer {
+  font-size: 10px;
+  line-height: 14px;
+  margin-top: 5px;
+  color: #a8a8a8;
+  white-space: nowrap;
+}
+footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+.about {
+  margin-left: 7px;
+}
+main.about {
+  margin-left: 0;
+}
+.disclosure {
+  text-decoration: underline;
+}
+.start footer {
+  display: none;
+}
+@media (min-width: 600px) {
+  body {
+    margin-top: 48px;
+  }
+  main {
+    border: 1px solid #333;
+    border-radius: 7px;
+  }
+}
+/* Reserve browser space: the normal card fits a 240 × 200 CSS pixel viewport. */
+main {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.result,
+.place-choice,
+.detail {
+  height: 35px;
+}
+.result {
+  margin-bottom: 2px;
+}
+.detail {
+  line-height: 30px;
+}
+.place-choice {
+  line-height: 16px;
+}
+.place-choice small {
+  line-height: 12px;
+}
+.results h1 {
+  line-height: 18px;
+  margin-bottom: 3px;
+}
+.results nav {
+  margin-top: 0;
+}
+.results footer {
+  margin-top: 3px;
+}
+.place-choice span,
+.place-choice small {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.compact .action {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.road .disclosure {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.input .message,
+.how .message {
+  margin: 2px 0 4px;
+  line-height: 16px;
+}
+.input nav {
+  margin-top: 4px;
+}
+.input footer {
+  margin-top: 3px;
+}
+.modes button {
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
